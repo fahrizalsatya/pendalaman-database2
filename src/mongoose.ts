@@ -46,8 +46,15 @@ export class Customer {
         return customers
     }
 
-    async getByID() {
+    async getByID(customerID: string) {
+        let customer: CustomerType | null
+        try {
+            customer = await this.model.findById(customerID)
+        } catch (error) {
+            throw error
+        }
 
+        return customer
     }
 
     async update() {

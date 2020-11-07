@@ -39,8 +39,15 @@ async function initApp(){
         return res.send(customers)
     })
 
-    app.get('/customer/:id', function (req, res, next) {
+    app.get('/customer/:id', async function (req, res, next) {
+        let customer: CustomerType | null
+        try {
+            customer = await customerModel.getByID(req.params.id)
+        } catch (error) {
+            return next(error)
+        }
 
+        return res.send(customer)
     })
 
     app.put('/customer', function (req, res, next) {
