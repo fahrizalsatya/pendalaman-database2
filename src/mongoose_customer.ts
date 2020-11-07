@@ -16,7 +16,15 @@ export type CustomerDocument = mongoose.Document & CustomerType
 
 //schema definition
 const CustomerSchema = new mongoose.Schema({
-
+    first_name: { type: String, required: true },
+    last_name: { type: String, required: true },
+    age: { type: Number, required: true },
+    customer_type: { type: String, required: true },
+    street: { type: String, required: true },
+    city: { type: String, required: true },
+    state: { type: String, required: true },
+    zip_code: { type: String, required: true },
+    phone_number: { type: String, required: true },
 })
 
 export class Customer {
