@@ -1,0 +1,30 @@
+{
+    "name": "pendalaman-database2",
+    "type": "module",
+    "version": "1.0.0",
+    "description": "github.com/fahrizalsatya/pendalaman-database2\r Pendalaman-database2 oleh Fahrizal Satya",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node dist/index.js",
+        "start.dev": "nodemon dist/index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/fahrizalsatya/pendalaman-database2.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/fahrizalsatya/pendalaman-database2/issues"
+    },
+    "homepage": "https://github.com/fahrizalsatya/pendalaman-database2#readme",
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "dotenv": "^8.2.0",
+        "express": "^4.17.1"
+    },
+    "devDependencies": {
+        "@types/node": "^14.14.6"
+    }
+}
