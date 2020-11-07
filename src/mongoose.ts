@@ -65,7 +65,11 @@ export class Customer {
         }
     }
 
-    async delete() {
-
+    async delete(customerID: string) {
+        try {
+            await this.model.findByIdAndDelete(customerID)
+        } catch (error) {
+            throw error
+        }
     }
 } 
