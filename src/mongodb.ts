@@ -20,8 +20,13 @@ export class Customer {
         this.collection = db.collection('customer')
     }
 
-    async create() {
-
+    async create(data: CustomerType) {
+        try {
+            const result = await this.collection.insertOne(data)
+            console.log('Insert result %j', result)
+        } catch (error) {
+            throw error
+        }
     }
 
     async getAll() {
