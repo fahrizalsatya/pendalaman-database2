@@ -36,7 +36,14 @@ export class Customer {
     }
 
     async getAll() {
+        let customers: CustomerType[]
+        try {
+            customers = await this.model.find({})
+        } catch (error) {
+            throw error
+        }
 
+        return customers
     }
 
     async getByID() {
