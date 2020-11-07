@@ -6,9 +6,15 @@ dotenv.config()
 
 import express from 'express'
 import bodyParser from 'body-parser'
+import mongodb from  'mongodb'
+
 
 async function initApp(){
     const app = express()
+    
+    //init db
+    const db = await mongodb.connect(`${process.env.MONGODB_URI}`, { useUnifiedTopology: true })
+
     app.use(bodyParser.json())
 
     app.post('/customer', function (req, res, next) {
