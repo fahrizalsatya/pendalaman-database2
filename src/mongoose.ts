@@ -26,8 +26,13 @@ export class Customer {
         this.model = mongoose.model('customer', CustomerSchema)
     }
 
-    async create() {
-
+    async create(data: CustomerType) {
+        try {
+            const result = await this.model.create(data)
+            console.log(`Insert result %j`, result)
+        } catch (error) {
+            throw error
+        }
     }
 
     async getAll() {
