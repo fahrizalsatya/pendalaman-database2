@@ -57,8 +57,12 @@ export class Customer {
         return customer
     }
 
-    async update() {
-
+    async update(customerID: string, data: Partial<CustomerType>) {
+        try {
+            await this.model.findByIdAndUpdate(customerID, { $set: data })
+        } catch (error) {
+            throw error
+        }
     }
 
     async delete() {
